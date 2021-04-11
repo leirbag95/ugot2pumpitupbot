@@ -308,7 +308,7 @@ module.exports = {
                     usdtBalance = bal / 10 ** 9;
                     let avax2usdt = wavaxBalance / usdtBalance;
                     let spore2usdt = avax2usdt / avax2Spore;
-                    return callback('1 SPORE = ' + spore2usdt + ' USDT');
+                    return callback('1 SPORE = ' + spore2usdt + ' USDT\n1 AVAX = '+avax2Spore+' SPORE');
                   });
               });
           });
