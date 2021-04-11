@@ -15,6 +15,6 @@ bot.use(async (ctx, next) => {
 
 bot.hears('/help', (ctx) => ctx.reply('Hello ! 🎱🎱 \n'));
 balance.sporePoolBalance(function (response) {
-  bot.hears('/p spore', (ctx) => ctx.reply(response));
+  bot.hears(/p (.+)/i, (ctx) => ctx.reply(response));
 });
 bot.launch();
