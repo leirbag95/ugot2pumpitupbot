@@ -1,6 +1,6 @@
 var Web3 = require('web3');
 const web3 = new Web3('https://api.avax.network/ext/bc/C/rpc');
-const abiContracts = require('./abiContracts');
+const abiContracts = require('./data/abiContracts');
 
 module.exports = {
   sporePoolBalance: function sporePoolBalance(callback) {
