@@ -1,4 +1,5 @@
 var Web3 = require('web3');
+var numeral = require('numeral');
 const web3 = new Web3('https://api.avax.network/ext/bc/C/rpc');
 const abiContracts = require('./data/abiContracts');
 const contracts = require('./data/contracts.json');
@@ -55,11 +56,11 @@ module.exports = {
                       let avax2usdt = wavaxBalance / usdtBalance;
                       let spore2usdt = avax2usdt / avax2Spore;
                       return callback(
-                        '1 SPORE = ' +
-                          spore2usdt +
-                          ' USDT\n1 AVAX = ' +
-                          avax2Spore +
-                          ' SPORE'
+                        `1 SPORE = ${numeral(spore2usdt).format(
+                          '0.00e+0'
+                        )} USDT\n1 AVAX = ${numeral(avax2Spore).format(
+                          '0,0.0000'
+                        )}(${numeral(avax2Spore).format('0.0a')}) SPORE `
                       );
                     });
                 });
