@@ -9,11 +9,16 @@ bot.use(async (ctx, next) => {
   await next();
   const response_time = new Date() - start;
   const chat_from = `${ctx.message.chat.first_name} (id: ${ctx.message.chat.id})`;
-  console.log(`${Date().toLocaleString()} Chat from ${chat_from} (Response Time: ${response_time})`);
+  console.log(
+    `${Date().toLocaleString()} Chat from ${chat_from} (Response Time: ${response_time})`
+  );
 });
 
-balance.sporePoolBalance(function (response) {
-  bot.hears(/p (.+)/i, (ctx) => ctx.reply(response));
+bot.hears(/p (.+)/i, (ctx) => {
+  const userInput = ctx.match[1].toLowerCase();
+  balance.sporePoolBalance(userInput, function (response) {
+    ctx.reply(response);
+  });
 });
+
 bot.launch();
-
