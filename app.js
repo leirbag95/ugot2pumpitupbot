@@ -14,14 +14,6 @@ bot.use(async (ctx, next) => {
   );
 });
 
-bot.command('quit', (ctx) => {
-  // Explicit usage
-  ctx.telegram.leaveChat(ctx.message.chat.id)
-
-  // Using context shortcut
-  ctx.leaveChat()
-})
-
 bot.hears(/p (.+)/i, (ctx) => {
   const userInput = ctx.match[1].toLowerCase();
   balance.sporePoolBalance(userInput, function (response) {
