@@ -58,7 +58,7 @@ module.exports = {
                       return callback(
                         `1 SPORE = ${numeral(spore2usdt).format(
                           '0.00e+0'
-                        )} USDT\n1 AVAX = ${numeral(avax2Spore).format(
+                        )} USDT\n\n1 AVAX = ${numeral(avax2Spore).format(
                           '0,0.0000'
                         )}(${numeral(avax2Spore).format('0.0a')}) SPORE `
                       );
@@ -66,6 +66,8 @@ module.exports = {
                 });
             });
         });
+    } else {
+      return callback(`😬 Sorry I haven't integrated this token yet! I'll let @glfss and @jmtpf know. `)
     }
   }
 };
