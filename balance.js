@@ -56,7 +56,7 @@ module.exports = {
                         let avax2usdt = wavaxBalance / usdtBalance;
                         let spore2usdt = avax2usdt / avax2Spore;
                         return callback(
-                          `1 ${userInput} = ${numeral(spore2usdt).format(
+                          `🪙 TOKEN: ${userInput}\n1 ${userInput} = ${numeral(spore2usdt).format(
                             '0.00e+0'
                           )} USDT\n\n1 AVAX = ${numeral(avax2Spore).format(
                             '0,0.0000'
