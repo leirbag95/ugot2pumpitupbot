@@ -4,9 +4,9 @@ const web3 = new Web3('https://api.avax.network/ext/bc/C/rpc');
 const abiContracts = require('./data/abiContracts');
 const contracts = require('./data/contracts.json');
 
-const usdtXwavaxPoolAddress = contracts['usdt'].poolContrat;
-const wavaxAddressContract = contracts['usdt'].wavaxContract;
-const usdtAddressContract = contracts['usdt'].contract;
+const usdtXwavaxPoolAddress = "0x9ee0a4e21bd333a6bb2ab298194320b8daa26516";
+const wavaxAddressContract = "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7";
+const usdtAddressContract = "0xde3a24028580884448a5397872046a019649b084";
 
 module.exports = {
   balance: function balance(userInput, callback) {

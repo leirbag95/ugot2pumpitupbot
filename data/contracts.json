@@ -17,10 +17,5 @@
     "wavaxContract": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
     "contract":"0x60781c2586d68229fde47564546784ab3faca982",
     "decimal":1000000000000000000
-  },
-  "usdt": {
-    "poolContrat": "0x9ee0a4e21bd333a6bb2ab298194320b8daa26516",
-    "wavaxContract": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
-    "contract": "0xde3a24028580884448a5397872046a019649b084"
   }
 }

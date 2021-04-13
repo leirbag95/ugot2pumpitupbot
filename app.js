@@ -47,7 +47,6 @@ bot.action('BALANCE', (ctx) => {
   });
 })
 
-
 // bot.hears(/p (.+)/i, (ctx) => {
 //   const userInput = ctx.match[1].toLowerCase();
 //   balance.balance(userInput, function (response) {
