@@ -4,7 +4,14 @@
     "charts":"https://info.pangolin.exchange/#/token/0x6e7f5c0b9f4432716bdd0a77a3601291b9d9e985",
     "poolContrat": "0x0a63179a8838b5729e79d239940d7e29e40a0116",
     "wavaxContract": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
-    "contract": "0x6e7f5c0b9f4432716bdd0a77a3601291b9d9e985"
+    "contract": "0x6e7f5c0b9f4432716bdd0a77a3601291b9d9e985",
+    "decimal":1000000000
+  },
+  "pefi": {
+    "poolContrat": "0x494dd9f783daf777d3fb4303da4de795953592d0",
+    "wavaxContract": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
+    "contract": "0xe896cdeaac9615145c0ca09c8cd5c25bced6384c",
+    "decimal":1000000000000000000
   },
   "usdt": {
     "poolContrat": "0x9ee0a4e21bd333a6bb2ab298194320b8daa26516",

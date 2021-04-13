@@ -9,7 +9,7 @@ const wavaxAddressContract = contracts['usdt'].wavaxContract;
 const usdtAddressContract = contracts['usdt'].contract;
 
 module.exports = {
-  sporePoolBalance: function sporePoolBalance(userInput, callback) {
+  balance: function balance(userInput, callback) {
     let contractsData = contracts[userInput];
 
     if (contractsData) {
@@ -30,7 +30,7 @@ module.exports = {
             .balanceOf(sporeXwavaxPoolAddress)
             .call()
             .then(function (bal) {
-              sporeBalance = bal / 10 ** 9;
+              sporeBalance = bal / contractsData.decimal;
               let avax2Spore = sporeBalance / wavaxBalance;
               // on calcule l'avax vers l'usdt
               wavaxBalance = 0;
@@ -56,11 +56,11 @@ module.exports = {
                       let avax2usdt = wavaxBalance / usdtBalance;
                       let spore2usdt = avax2usdt / avax2Spore;
                       return callback(
-                        `1 SPORE = ${numeral(spore2usdt).format(
+                        `1 ${userInput} = ${numeral(spore2usdt).format(
                           '0.00e+0'
                         )} USDT\n\n1 AVAX = ${numeral(avax2Spore).format(
                           '0,0.0000'
-                        )}(${numeral(avax2Spore).format('0.0a')}) SPORE `
+                        )}(${numeral(avax2Spore).format('0.0a')}) ${userInput} `
                       );
                     });
                 });

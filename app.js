@@ -16,7 +16,7 @@ bot.use(async (ctx, next) => {
 
 bot.hears(/p (.+)/i, (ctx) => {
   const userInput = ctx.match[1].toLowerCase();
-  balance.sporePoolBalance(userInput, function (response) {
+  balance.balance(userInput, function (response) {
     ctx.reply(response);
   });
 });
