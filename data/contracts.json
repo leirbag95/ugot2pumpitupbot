@@ -17,5 +17,11 @@
     "wavaxContract": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
     "contract":"0x60781c2586d68229fde47564546784ab3faca982",
     "decimal":1000000000000000000
+  },
+  "olive": {
+    "poolContrat": "0x46ba854dc4a1f85481081b4ab1d07b2c604b1bbe",
+    "wavaxContract": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
+    "contract":"0x617724974218a18769020a70162165a539c07e8a",
+    "decimal":1000000000000000000
   }
 }
