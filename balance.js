@@ -52,8 +52,8 @@ module.exports = {
                       .balanceOf(usdtXwavaxPoolAddress)
                       .call()
                       .then(function (bal) {
-                        usdtBalance = bal / 10 ** 9;
-                        let avax2usdt = wavaxBalance / usdtBalance;
+                        usdtBalance = bal / 10 ** 6;
+                        let avax2usdt = usdtBalance / wavaxBalance;
                         let spore2usdt = avax2usdt / avax2Spore;
                         return callback(
                           `🪙 TOKEN: ${userInput}\n1 ${userInput} = ${numeral(spore2usdt).format(

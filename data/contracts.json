@@ -23,5 +23,11 @@
     "wavaxContract": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
     "contract":"0x617724974218a18769020a70162165a539c07e8a",
     "decimal":1000000000000000000
+  },
+  "snob": {
+    "poolContrat": "0xa1c2c3b6b120cbd4cec7d2371ffd4a931a134a32",
+    "wavaxContract": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
+    "contract":"0xc38f41a296a4493ff429f1238e030924a1542e50",
+    "decimal":1000000000000000000
   }
 }
