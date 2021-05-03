@@ -20,16 +20,22 @@ bot.use(async (ctx, next) => {
 });
 
 bot.command('p', (ctx) => {
-  const userInput = ctx.message.text.split(' ')[1].toLowerCase();
-  balance.balance(userInput, function (response) {
-    ctx.replyWithMarkdown(response, {
-      reply_markup: {
-        inline_keyboard: [
-          [{ text: "Refresh", callback_data: "BALANCE" }]
-        ]
-      }
-    })
-  });
+  const userInputArray = ctx.message.text.split(' ')
+  console.log(userInputArray.length)
+  if (userInputArray.length > 1) {
+    const userInput = userInputArray[1].toLowerCase();
+    balance.balance(userInput, function (response) {
+      ctx.replyWithMarkdown(response, {
+        reply_markup: {
+          inline_keyboard: [
+            [{ text: "🔁 Refresh", callback_data: "BALANCE" }]
+          ]
+        }
+      })
+    }); 
+  } else {
+    ctx.reply("Please enter a valid token")
+  }
 })
 
 bot.action('BALANCE', (ctx) => {
@@ -37,13 +43,16 @@ bot.action('BALANCE', (ctx) => {
   let text = ctx.update.callback_query.message.text.match(re)
   const userInput = text != [] ? text : 'null';
   balance.balance(userInput, function (response) {
-    ctx.editMessageText(response,  {
-      reply_markup: {
-        inline_keyboard: [
-          [{ text: "🔁 Refresh", callback_data: "BALANCE" }]
-        ]
-      }
-    })
+    // if response message != previous message (to avoid 400 Bad request ERROR)
+    if (response != ctx.update.callback_query.message.text) {
+      ctx.editMessageText(response,  {
+          reply_markup: {
+            inline_keyboard: [
+              [{ text: "🔁 Refresh", callback_data: "BALANCE" }]
+            ]
+          }
+        })
+    }
   });
 })
 
