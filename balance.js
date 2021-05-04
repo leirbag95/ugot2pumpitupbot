@@ -56,11 +56,11 @@ module.exports = {
                         let avax2usdt = usdtBalance / wavaxBalance;
                         let spore2usdt = avax2usdt / avax2Spore;
                         return callback(
-                          `🪙 TOKEN: ${userInput}\n1 ${userInput} = ${numeral(spore2usdt).format(
+                          [spore2usdt, avax2Spore ,`🪙 TOKEN: ${userInput}\n1 ${userInput} = ${numeral(spore2usdt).format(
                             '0.00e+0'
                           )} USDT\n\n1 AVAX = ${numeral(avax2Spore).format(
                             '0,0.0000'
-                          )}(${numeral(avax2Spore).format('0.0a')}) ${userInput} `
+                          )}(${numeral(avax2Spore).format('0.0a')}) ${userInput} `]
                         );
                       });
                   });
