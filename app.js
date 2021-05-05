@@ -9,7 +9,7 @@ const balance = require('./balance');
 
 var usdtPrice = null;
 
-var j = schedule.scheduleJob('*/10 * * * *', function(){
+var j = schedule.scheduleJob('*/30 * * * *', function(){
   fs.readFile('alertSettings.json', (err, data) => {
     let alertIDs = JSON.parse(data);
     for (const [userID, value] of Object.entries(alertIDs)) {
