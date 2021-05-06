@@ -9,7 +9,7 @@ const balance = require('./balance');
 
 var usdtPrice = null;
 
-var j = schedule.scheduleJob('*/30 * * * *', function(){
+function onTheMove() {
   fs.readFile('alertSettings.json', (err, data) => {
     let alertIDs = JSON.parse(data);
     for (const [userID, value] of Object.entries(alertIDs)) {
@@ -22,16 +22,27 @@ var j = schedule.scheduleJob('*/30 * * * *', function(){
             let tmpUsdtPrice = response[0];
             let diff = ((tmpUsdtPrice - usdtPrice) / usdtPrice) * 100
             if (diff >= 5) {
-              bot.sendMessage(userID, `${token} is up`)
+              bot.sendMessage(userID, `The price of ${token} is up in the last 30 minutes`)
             } else if (diff <= -5){
-              bot.sendMessage(userID, `${token} is down`)
+              bot.sendMessage(userID, `The price of ${token} is down in the last 30 minutes`)
             }
           }
         })
       }
     }
   })
+}
+
+var f10 = schedule.scheduleJob('*/10 * * * *', function(){
+  onTheMove()
 });
+var f30 = schedule.scheduleJob('*/30 * * * *', function(){
+  onTheMove()
+});
+var f60 = schedule.scheduleJob('*/60 * * * *', function(){
+  onTheMove()
+});
+
 bot.use(async (ctx, next) => {
   const start = new Date();
   await next();
