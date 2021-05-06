@@ -26,6 +26,7 @@ function onTheMove() {
             } else if (diff <= -5){
               bot.sendMessage(userID, `The price of ${token} is down in the last 30 minutes`)
             }
+            usdtPrice = tmpUsdtPrice;
           }
         })
       }
@@ -33,13 +34,8 @@ function onTheMove() {
   })
 }
 
-var f10 = schedule.scheduleJob('*/10 * * * *', function(){
-  onTheMove()
-});
+
 var f30 = schedule.scheduleJob('*/30 * * * *', function(){
-  onTheMove()
-});
-var f60 = schedule.scheduleJob('*/60 * * * *', function(){
   onTheMove()
 });
 
